@@ -11,7 +11,7 @@
 </script>
 </defs>
 <svg class="write-page" color-interpolation="linearRGB" x="10" y="10" width="768px" height="1050px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <g class="write-content write-v3" width="768" height="1050" xruling="0" yruling="10" marginLeft="0" papercolor="#FFFFFF" rulecolor="#FF000000">
+  <g class="write-content write-v3" width="768" height="1050" xruling="0" yruling="100" marginLeft="0" papercolor="#FFFFFF" rulecolor="#FF000000">
     <g class="ruleline write-scale-down" color="#000000" shape-rendering="crispEdges" vector-effect="non-scaling-stroke">
       <pattern id="ruling1" x="0" y="50" width="768" height="100" patternUnits="userSpaceOnUse">
         <path fill="none" stroke="currentColor" stroke-width="1" d="M68 10 l632 0" />
