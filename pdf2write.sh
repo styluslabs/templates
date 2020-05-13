@@ -2,8 +2,8 @@
 # Create a Write document from a PDF by generating page images
 
 echo "Converting PDF to images..."
-(command -v pdftoppm >/dev/null 2>&1 && pdftoppm -png -r 300 $1 out) || convert -density 300 $1 out-%03d.png
-if [ ! -f "out-0.png" ] && [ ! -f "out-00.png" ] && [ ! -f "out-000.png" ]; then
+(command -v pdftoppm >/dev/null 2>&1 && pdftoppm -png -r 300 $1 out) || convert -density 300 -scene 1 $1 out-%03d.png
+if [ ! -f "out-1.png" ] && [ ! -f "out-01.png" ] && [ ! -f "out-001.png" ]; then
   echo "No page images found: make sure pdftoppm (from poppler-utils) or imagemagick and ghostscript are installed"
   exit 1
 fi
