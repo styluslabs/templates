@@ -2,10 +2,9 @@
 
 ### How to use in Write ###
 
-Download the template to your desired folder, then in Write long press on the template file and choose "Copy", then navigate to the folder where you'd like to create a new document and tap the "Copy here" button at the top of the document browser (in iOS, instead select the desired folder in the popup), long press and choose "Rename" to rename the copy and, finally, open it.  Alternatively, the template can be opened directly and then a copy saved using Document -> Save As...
+Download the template to your desired folder, then in Write long press on the template file and choose "Open Copy" (in iOS, long press and choose "Duplicate", then rename and open).  Alternatively, the template can be opened directly and then a copy saved using Document -> Save As...
 
-This process will be streamlined in a future update to Write.
-
+To add a page with a different template to a document, use Document -> Insert Document... and choose the desired template.
 
 ### Editing templates ###
 
@@ -41,3 +40,9 @@ The page background ("ruling") is determined by the content in `g.ruleline`.  `c
 On `g.write-content`, the `width`, `height`, `xruling`, `yruling`, `marginLeft`, `papercolor`, and `rulecolor` attributes correspond to the values set in the Page Setup dialog.  Page width, height, and color (as `fill`) must also be set on `rect.pagerect` in `g.ruleline`.  Page width and height are also set on `svg.write-page`.
 
 Any content inside `g.write-content` after `g.ruleline` will be editable in Write.
+
+Multi-page templates can be created by adding additional pages (svg.write-page) to the template document.  When editing the document in Write, the background of the last page will be duplicated when adding to new pages to the end.  To prevent this, the class `write-no-dup` can be added to `g.ruleline`
+
+### PDF import ###
+
+On Linux or Mac, run `pdf2write.sh` can be used to generate a Write document with page images from the specified PDF as the page backgrounds.  The script requires imagemagick and ghostscript or pdftoppm (from poppler-utils - a smaller install).
