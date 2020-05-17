@@ -6,8 +6,8 @@
 <script type="text/writeconfig">
   <int name="docFormatVersion" value="2" />
   <int name="pageNum" value="0" />
-  <float name="xOffset" value="57.1428566" />
-  <float name="yOffset" value="-100" />
+  <float name="xOffset" value="-10" />
+  <float name="yOffset" value="-10" />
 </script>
 </defs>
 <svg class="write-page" color-interpolation="linearRGB" x="10" y="10" width="768px" height="1050px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
