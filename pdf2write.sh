@@ -15,7 +15,7 @@ printf '<rect id="write-doc-background" width="100%%" height="100%%" fill="#8080
 
 for PNGPAGE in out-*.png
 do
-  read WIDTH2 HEIGHT2 < <(identify -format "%w %h" $PNGPAGE)
+  read WIDTH2 HEIGHT2 < <(file $PNGPAGE | cut -d "," -f 2 | cut -d " " -f 2,4)
   # page images generated at 300 DPI but Write uses 150 DPI as reference
   WIDTH=$((WIDTH2/2))
   HEIGHT=$((HEIGHT2/2))
@@ -27,7 +27,7 @@ do
 
   printf '      <image x="0" y="0" width="%d" height="%d" xlink:href="data:image/png;base64,' $WIDTH $HEIGHT >> $SVGOUT
   # doesn't seem to be a way to prevent base64 from appending newline
-  base64 $PNGPAGE >> $SVGOUT
+  base64 $PNGPAGE | tr -d '\n' >> $SVGOUT
   printf '"/>\n    </g>\n  </g>\n</svg>' >> $SVGOUT
 done
 
