@@ -1,0 +1,32 @@
+<svg id="write-document" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect id="write-doc-background" width="100%" height="100%" fill="#808080"/>
+<defs id="write-defs">
+<image id='thumbnail' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAAGQCAYAAACQ1u18AAAFbElEQVR4Ae3cu2obURhG0TP2CIH8Iur9ICJvr9p1Wgfk28QhgeB2XBw2rAWpj5odfiN/XrZPY5bn5zEeHgawz13q0wJfCBjCBAxhAoYwAUOYgCFsfXqa9/j9rzHeTwPYafE9MHQ5oSFMwBAmYAgTMIQJGMIEDGHr6+u8x5fPt7eJ70PdejhMfP3w7x+wixMawgQMYQKGMAFDmIAhTMAQZg8MYfbAEOaEhjABQ5iAIUzAECZgCBMwhNkDQ5g9MIQ5oSFMwBAmYAgTMIQJGMIEDGH2wBBmDwxhTmgIEzCECRjCBAxhAoYwc0IIMyeEMCc0hAkYwgQMYQKGMAFDmIAhzJwQwswJIcwJDWEChjABQ5iAIUzAECZgCLMHhjB7YAhzQkOYgCFMwBAmYAgTMIQJGMLsgSHMHhjCnNAQJmAIEzCECRjCBAxhAoYwe2AIsweGMCc0hAkYwgQMYQKGMAFDmDkhhJkTQpgTGsIEDGEChjABQ5iAIUzAEGZOCGHmhBDmhIYwAUOYgCFMwBAmYAgTMITZA0OYPTCEOaEhTMAQJmAIEzCECRjCBAxh9sAQZg8MYU5oCBMwhAkYwgQMYQKGMAFDmD0whNkDQ5gTGsIEDGEChjABQ5iAIUzAEGYPDGH2wBDmhIYwAUOYgCFMwBAmYAgzJ4Qwc0IIc0JDmIAhTMAQJmAIEzCECRjCzAkhzJwQwpzQECZgCBMwhAkYwgQMYQKGMHtgCLMHhjAnNIQJGMIEDGEChjABQ5iAIcweGMLsgSHMCQ1hAoYwAUOYgCFMwBAmYAizB4Ywe2AIc0JDmIAhTMAQJmAIEzCEmRNCmDkhhDmhIUzAECZgCBMwhAkYwgQMYeaEEGZOCGFOaAgTMIQJGMIEDGEChjABQ5g9MITZA0OYExrCBAxhAoYwAUOYgCFMwBBmDwxh9sAQ5oSGMAFDmIAhTMAQJmAIEzCE2QNDmD0whDmhIUzAECZgCBMwhAkYwswJIcycEMKc0BAmYAgTMIQJGMIEDGEChjBzQggzJ4QwJzSECRjCBAxhAoYwAUOYgCHMHhjC7IEhzAkNYQKGMAFDmIAhTMAQJmAIsweGMHtgCHNCQ5iAIUzAECZgCBMwhAkYwuyBIcweGMKc0BAmYAgTMIQJGMIEDGEChjB7YAizB4YwJzSECRjCBAxhAoYwAUOYOSGEmRNCmBMawgQMYQKGMAFDmIAhTMAQZk4IYeaEEOaEhjABQ5iAIUzAECZgCBMwhNkDQ5g9MIQ5oSFMwBAmYAgTMIQJGMIEDGH2wBBmDwxhTmgIEzCECRjCBAxhAoYwAUOYPTCE2QNDmBMawgQMYQKGMAFDmIAhzJwQwswJIcwJDWEChjABQ5iAIUzAECZgCDMnhDBzQghzQkOYgCFMwBAmYAgTMIQJGMLsgSHMHhjCnNAQJmAIEzCECRjCBAxhAoYwe2AIsweGMCc0hAkYwgQMYQKGMAFDmIAhbHl8/LG9vLylPjTw13o6/Rwnv0wBSevxeEx9YOA/PwNDmIAhTMAQtl4ul3mPf3yMtzv/h8Be6oEwAUOYgCFMwBAmYAgTMIQJGMLW6/U67fHjto3bsgxgn/V8Ps973C9ywLeoB8IEDGEChjABQ5iAIUzAELbebrdpj7/7Ggm+ZeoftfvzPfC9gGE39UCYgCFMwBAmYAgTMISZE0KYOSGEqQfCBAxhAoYwAUOYgCFMwBBmTghh5oQQph4IEzCECRjCBAxhAoYwAUOYPTCE2QNDmHogTMAQJmAIEzCECRjCBAxh9sAQZg8MYeqBMAFDmIAhTMAQJmAIEzCE2QNDmD0whKkHwgQMYQKGMAFDmIAhzJwQwswJIUw9ECZgCPsNElSMMXcebkIAAAAASUVORK5CYII='/>
+
+<script type="text/writeconfig">
+  <int name="docFormatVersion" value="2" />
+  <int name="pageNum" value="0" />
+  <float name="xOffset" value="-10" />
+  <float name="yOffset" value="-10" />
+</script>
+</defs>
+<svg class="write-page" color-interpolation="linearRGB" x="10" y="10" width="768px" height="1050px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g class="write-content write-v3" width="768" height="1050" xruling="0" yruling="40" marginLeft="0" papercolor="#FFFFFF" rulecolor="#7F7FFF">
+    <g class="ruleline write-scale-down" color="#7F7FFF" shape-rendering="crispEdges" vector-effect="non-scaling-stroke">
+      <pattern id="ruling1" x="0" y="0" width="2048" height="40" patternUnits="userSpaceOnUse">
+        <path fill="none" stroke="currentColor" stroke-width="1" d="M40 40 l334 0" />
+        <path fill="none" stroke="currentColor" stroke-width="1" d="M394 40 l334 0" />
+        <!-- path fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="0 40 334 20 334 0" d="M0 40 l2048 0" / -->
+      </pattern>
+      <rect class="pagerect" fill="#FFFFFF" x="0" y="0" width="768" height="1050" />
+      <rect fill="url(#ruling1)" x="0" y="0" width="2048" height="4096" />
+      <path class="leftmargin" stroke="#FF0000" d="M0 0 l0 4096" />
+    </g>
+  </g>
+</svg>
+<defs>
+<style type="text/css"><![CDATA[
+  #write-document, #write-doc-background { width: 788px;  height: 1070px; }
+]]></style>
+</defs>
+</svg>
