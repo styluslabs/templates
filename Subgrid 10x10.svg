@@ -1,0 +1,52 @@
+<svg id="write-document" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect id="write-doc-background" width="100%" height="100%" fill="#808080"/>
+<defs id="write-defs">
+<image id='thumbnail' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAAGQCAYAAACQ1u18AAANC0lEQVR4Ae3dsY4b1xmG4aOAMiwH6YNcglt3btKo1xWkzrX4EnI56e0mhVsXBoL0ASwba2OjkUKIMUxk5gMP+Q35vBW54eDkncWK7/7eHxzP/+Xrr5+ftzxeePt22+uPz5frtlw749zTrzf7/tb/3y3X/r/r79W37T7POHu57ncDwG7xAwzsmMM333x48N13H7+45vHC09MYL1+uf/3x+XLdwtprZ5x7+vVm3+OZyffonO8a9737tt3nGWcv1x2++OLj/7D18Y8/jvHpp+tff3y+XLew5doZ556+rtX39Mzk2nO+a9z37tt2ny999nKdhAZ2jIQu95XQma+EltAVvhI695XQAKqR0OW+EjrzldASusJXQue+EhpANRK63FdCZ74SWkJX+Ero3FdCA6jmcPzXY3k73vJ44aeftr3++Px43S3PPf16s++lrj33unv1bbvPM85erjsc37qXBt/y+MjyfO3rf/187bUzzj39ervvJb5H5153r75t93nW2RIa2DGm0OW+ptCZrym0KXSFryl07msKDaAaCV3uK6EzXwktoSt8JXTuK6EBVCOhy30ldOYroSV0ha+Ezn0lNIBqJHS5r4TOfCW0hK7wldC57yMktG0k20i2kcZ+t5H8DgzsGOuE1gmtE17hPs862zswsGNMoct9TaEzX1NoU+gKX1Po3NcfcgCoRkKX+0rozFdCS+gKXwmd+0poANVI6HJfCZ35SmgJXeEroXNfCQ2gGgld7iuhM18JLaErfCV07iuhAVRjH9g+sH3g4dMJrRNO9LVOaJ3QOiFwh5hCl/uaQme+ptCm0BW+ptC5ryk0gGokdLmvhM58JbSErvCV0LmvhAZQjYQu95XQma+EltAVvhI695XQAKqR0OW+EjrzldASusJXQue+j5DQtpFsI9lGGj6dEMANsE5ondA64RXu86yzvQMDO8YUutzXFDrzNYU2ha7wNYXOff0hB4BqJHS5r4TOfCW0hK7wldC5r4QGUI2ELveV0JmvhJbQFb4SOveV0ACqkdDlvhI685XQErrCV0LnvhIaQDX2ge0D2wcePp3QOuFEX+uE1gmtEwJ3iCl0ua8pdOZrCm0KXeFrCp37mkIDqEZCl/tK6MxXQkvoCl8JnftKaADVSOhyXwmd+Upo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'/>
+
+<script type="text/writeconfig">
+  <int name="docFormatVersion" value="2" />
+  <int name="pageNum" value="0" />
+  <float name="xOffset" value="-10" />
+  <float name="yOffset" value="-10" />
+</script>
+</defs>
+<svg class="write-page" color-interpolation="linearRGB" x="10" y="10" width="800px" height="1050px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g class="write-content write-v3" width="800" height="1050" xruling="10" yruling="10" marginLeft="10" papercolor="#FFFFFF" rulecolor="#FF7F7FFF">
+    <g class="ruleline write-scale-down" color="#7F7FFF" shape-rendering="crispEdges" vector-effect="non-scaling-stroke">
+      <pattern id="ruling1" x="0" y="0" width="2048" height="100" patternUnits="userSpaceOnUse">
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M0 10 l2048 0" />
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M0 20 l2048 0" />
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M0 30 l2048 0" />
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M0 40 l2048 0" />
+        <path fill="none" stroke="currentColor" stroke-width="1" d="M0 50 l2048 0" />
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M0 60 l2048 0" />
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M0 70 l2048 0" />
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M0 80 l2048 0" />
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M0 90 l2048 0" />
+        <path fill="none" stroke="currentColor" stroke-width="2" d="M0 100 l2048 0" />
+      </pattern>
+      <pattern id="ruling2" x="0" y="0" width="100" height="2048" patternUnits="userSpaceOnUse">
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M10 0 l0 4096" />
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M20 0 l0 4096" />
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M30 0 l0 4096" />
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M40 0 l0 4096" />
+        <path fill="none" stroke="currentColor" stroke-width="1" d="M50 0 l0 4096" />
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M60 0 l0 4096" />
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M70 0 l0 4096" />
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M80 0 l0 4096" />
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M90 0 l0 4096" />
+        <path fill="none" stroke="currentColor" stroke-width="2" d="M100 0 l0 4096" />
+      </pattern>
+      <rect class="pagerect" fill="#FFFFFF" x="0" y="0" width="800" height="1050" />
+      <rect fill="url(#ruling1)" x="0" y="0" width="2048" height="4096" />
+      <rect fill="url(#ruling2)" x="0" y="0" width="2048" height="4096" />
+      <path class="leftmargin" stroke="#FFBFBF" d="M10 0 l0 4096" />
+    </g>
+  </g>
+</svg>
+<defs>
+<style type="text/css"><![CDATA[
+  #write-document, #write-doc-background { width: 820px;  height: 1070px; }
+]]></style>
+</defs>
+</svg>

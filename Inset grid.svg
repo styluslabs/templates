@@ -1,0 +1,34 @@
+<svg id="write-document" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect id="write-doc-background" width="100%" height="100%" fill="#808080"/>
+<defs id="write-defs">
+<image id='thumbnail' xlink:href='data:image/png;base64,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'/>
+
+<script type="text/writeconfig">
+  <int name="docFormatVersion" value="2" />
+  <int name="pageNum" value="0" />
+  <float name="xOffset" value="-10" />
+  <float name="yOffset" value="-10" />
+</script>
+</defs>
+<svg class="write-page" color-interpolation="linearRGB" x="10" y="10" width="800px" height="1050px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g class="write-content write-v3" width="800" height="1050" xruling="30" yruling="30" marginLeft="60" papercolor="#FFFFFF" rulecolor="#FF7F7FFF">
+    <g class="ruleline write-scale-down" color="#7F7FFF" shape-rendering="crispEdges" vector-effect="non-scaling-stroke">
+      <pattern id="ruling1" x="0" y="0" width="690" height="30" patternUnits="userSpaceOnUse">
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M0 30 l690 0" />
+      </pattern>
+      <pattern id="ruling2" x="0" y="0" width="30" height="930" patternUnits="userSpaceOnUse">
+        <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M30 0 l0 930" />
+      </pattern>
+      <rect class="pagerect" fill="#FFFFFF" x="0" y="0" width="800" height="1050" />
+      <rect fill="url(#ruling1)" x="60" y="60" width="690" height="930" />
+      <rect fill="url(#ruling2)" stroke="currentColor" stroke-width="1" x="60" y="60" width="690" height="930" />
+      <path class="leftmargin" stroke="none" d="M60 0 l0 1050" />
+    </g>
+  </g>
+</svg>
+<defs>
+<style type="text/css"><![CDATA[
+  #write-document, #write-doc-background { width: 820px;  height: 1070px; }
+]]></style>
+</defs>
+</svg>
