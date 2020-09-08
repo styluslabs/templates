@@ -2,8 +2,8 @@
 # Create a Write document from a PDF by generating page images
 
 if [ $# -eq 0 ]; then
-    echo "No arguments provided. Please specify a PDF to convert with 'pdf2write.sh /path/to/foo.pdf'"
-    exit 0
+  echo "No arguments provided. Please specify a PDF to convert with 'pdf2write.sh /path/to/foo.pdf'"
+  exit 0
 fi
 
 echo "Converting PDF to images..."
