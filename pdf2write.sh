@@ -1,6 +1,11 @@
 #!/bin/bash
 # Create a Write document from a PDF by generating page images
 
+if [ $# -eq 0 ]; then
+    echo "No arguments provided. Please specify a PDF to convert with 'pdf2write.sh /path/to/foo.pdf'"
+    exit 0
+fi
+
 echo "Converting PDF to images..."
 (command -v pdftoppm >/dev/null 2>&1 && pdftoppm -png -r 300 $1 out) || convert -density 300 -scene 1 $1 out-%03d.png
 if [ ! -f "out-1.png" ] && [ ! -f "out-01.png" ] && [ ! -f "out-001.png" ]; then
