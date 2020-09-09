@@ -48,10 +48,19 @@ if [ $# -eq 0 ]; then
   exit 0
 fi
 
-echo "Converting PDF to images..."
-pdf2images $1
+for PDF in "$@"
+do
+  # verify argument isn't empty
+  if [ -z "$PDF" ]
+  then
+    continue
+  fi
 
-echo "Generating Write document..."
-SVGOUT=$(basename $1 pdf)svg
-images2write $SVGOUT
-echo "Finished creating ${SVGOUT}z"
+  echo "Converting $PDF to images..."
+  pdf2images $PDF
+
+  echo "Generating Write document..."
+  SVGOUT=$(basename $PDF pdf)svg
+  images2write $SVGOUT
+  echo "Finished creating ${SVGOUT}z"
+done
