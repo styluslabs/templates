@@ -55,6 +55,12 @@ do
     continue
   fi
 
+  if ! [[ $PDF =~ \.pdf$ ]];
+  then
+    echo "Skipping $PDF as it is not a PDF file"
+    continue
+  fi
+
   echo "Converting $PDF to images..."
   pdf2images "$PDF"
 
