@@ -1,6 +1,27 @@
 #!/bin/bash
 # Create a Write document from a PDF by generating page images
 
+verifyPdf() {
+  if [ -z "$1" ] # verify argument isn't empty
+  then
+    return 1
+  fi
+
+  if ! [[ $1 =~ \.pdf$ ]]; # verify argument is a pdf
+  then
+    echo "Ignoring $1 as it is not a PDF file"
+    return 1
+  fi
+
+  if [ ! -f "$1" ]; # verify argument exists
+  then
+    echo "Ignoring $1 as it does not exist"
+    return 1
+  fi
+
+  return 0
+}
+
 pdf2images() {
   (command -v pdftoppm >/dev/null 2>&1 && pdftoppm -png -r 300 "$1" out) || convert -density 300 -scene 1 "$1" out-%03d.png
   if [ ! -f "out-1.png" ] && [ ! -f "out-01.png" ] && [ ! -f "out-001.png" ]; then
@@ -70,18 +91,10 @@ do
       #;;
     *)    # unknown option
       shift # past argument
-      if [ -z "$key" ] # verify argument isn't empty
+      if verifyPdf "$key"
       then
-        continue
+        PDFSIN+=("$key")
       fi
-
-      if ! [[ $key =~ \.pdf$ ]]; # verify argument is a pdf
-      then
-        echo "Ignoring $key as it is not a PDF file"
-        continue
-      fi
-
-      PDFSIN+=("$key")
       ;;
   esac
 done
