@@ -105,8 +105,8 @@ done
 
 if [ ${#PDFSIN[@]} -eq 0 ]
 then
-  echo "pdf2write.sh: Convert PDF to svg document for Stylus Labs Write"
-  echo "Usage: pdf2write.sh [options] [PDF-file]"
+  echo "pdf2write.sh: Convert PDF(s) to svg document(s) for Stylus Labs Write"
+  echo "Usage: pdf2write.sh [options] [PDF-files]"
   echo "  -f,--fg,--foreground: place page images in editable layer instead of ruling layer"
   echo "  --nozip: generate uncompressed svg instead of svgz"
   exit 1
