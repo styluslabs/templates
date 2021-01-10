@@ -81,7 +81,7 @@ do
         continue
       fi
 
-      PDFSIN+="$key"
+      PDFSIN+=("$key")
       ;;
   esac
 done
@@ -95,7 +95,7 @@ then
   exit 1
 fi
 
-for PDF in "$PDFSIN"
+for PDF in "${PDFSIN[@]}"
 do
   echo "Converting $PDF to images..."
   pdf2images "$PDF"
