@@ -48,7 +48,7 @@ images2write() {
 
 FOREGROUND=false
 COMPRESS=true
-PDFIN=''
+PDFSIN=()
 # https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash
 while [[ $# -gt 0 ]]
 do
@@ -69,13 +69,24 @@ case $key in
   #shift # past value
   #;;
   *)    # unknown option
-  PDFIN="$1"
   shift # past argument
+  if [ -z "$key" ] # verify argument isn't empty
+  then
+    continue
+  fi
+
+  if ! [[ $key =~ \.pdf$ ]]; # verify argument is a pdf
+  then
+    echo "Ignoring $key as it is not a PDF file"
+    continue
+  fi
+
+  PDFSIN+="$key"
   ;;
 esac
 done
 
-if [ -z "$PDFIN" ]
+if [ ${#PDFSIN[@]} -eq 0 ]
 then
   echo "pdf2write.sh: Convert PDF to svg document for Stylus Labs Write"
   echo "Usage: pdf2write.sh [options] [PDF-file]"
@@ -84,20 +95,8 @@ then
   exit 1
 fi
 
-for PDF in "$PDFIN"
+for PDF in "$PDFSIN"
 do
-  # verify argument isn't empty
-  if [ -z "$PDF" ]
-  then
-    continue
-  fi
-
-  if ! [[ $PDF =~ \.pdf$ ]];
-  then
-    echo "Skipping $PDF as it is not a PDF file"
-    continue
-  fi
-
   echo "Converting $PDF to images..."
   pdf2images "$PDF"
 
