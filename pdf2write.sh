@@ -60,7 +60,7 @@ images2write() {
   done
 
   printf "\n</svg>" >> "$1"
-  [ "$COMPRESS" = true ] && gzip -S z "$SVGOUT"
+  [ "$COMPRESS" = true ] && gzip -S z "$SVGOUT" && SVGOUT="$SVGOUT"z
   rm out-*.png
 }
 
@@ -116,5 +116,5 @@ do
   echo "Generating Write document..."
   SVGOUT=$(basename "$PDF" pdf)svg
   images2write "$SVGOUT"
-  echo "Finished creating ${SVGOUT}z"
+  echo "Finished creating ${SVGOUT}"
 done
