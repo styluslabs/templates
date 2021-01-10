@@ -27,27 +27,64 @@ images2write() {
     printf '  <g class="write-content write-v3" xruling="0" yruling="40" marginLeft="100" papercolor="#FFFFFF" rulecolor="#9F0000FF">\n' >> "$1"
     printf '    <g class="ruleline write-no-dup" shape-rendering="crispEdges">\n' >> "$1"
     printf '      <rect class="pagerect" fill="#FFFFFF" stroke="none" x="0" y="0" width="%d" height="%d" />\n' $width $height >> "$1"
+    [ "$FOREGROUND" = true ] && printf '    </g>\n' >> "$1"  # end ruleline <g>
     printf '      <image x="0" y="0" width="%d" height="%d" xlink:href="data:image/png;base64,' $width $height >> "$1"
+
+
     # doesn't seem to be a way to prevent base64 from appending newline
     base64 $pngpage | tr -d '\n' >> "$1"
-    printf '"/>\n    </g>\n  </g>\n</svg>' >> "$1"
+    printf '"/>\n' >> "$SVGOUT" # end <image>
+    [ "$FOREGROUND" = true ] || printf '    </g>\n' >> "$SVGOUT"  # end ruleline <g>
+    printf '  </g>\n</svg>' >> "$SVGOUT"  # end content <g> and page
   done
 
   printf "\n</svg>" >> "$1"
-
-  gzip -S z "$1"
+  [ "$COMPRESS" = true ] && gzip -S z "$SVGOUT"
   rm out-*.png
 }
 
 
 # Main
 
-if [ $# -eq 0 ]; then
-  echo "No arguments provided. Please specify a PDF to convert with 'pdf2write.sh /path/to/foo.pdf'"
-  exit 0
+FOREGROUND=false
+COMPRESS=true
+PDFIN=''
+# https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash
+while [[ $# -gt 0 ]]
+do
+key="$1"
+
+case $key in
+  -f|--fg|--foreground)
+  FOREGROUND=true
+  shift # past argument
+  ;;
+  --nozip)
+  COMPRESS=false
+  shift # past argument
+  ;;
+  #-d|--dpi)
+  #DPI="$2"
+  #shift # past argument
+  #shift # past value
+  #;;
+  *)    # unknown option
+  PDFIN="$1"
+  shift # past argument
+  ;;
+esac
+done
+
+if [ -z "$PDFIN" ]
+then
+  echo "pdf2write.sh: Convert PDF to svg document for Stylus Labs Write"
+  echo "Usage: pdf2write.sh [options] [PDF-file]"
+  echo "  -f,--fg,--foreground: place page images in editable layer instead of ruling layer"
+  echo "  --nozip: generate uncompressed svg instead of svgz"
+  exit 1
 fi
 
-for PDF in "$@"
+for PDF in "$PDFIN"
 do
   # verify argument isn't empty
   if [ -z "$PDF" ]
