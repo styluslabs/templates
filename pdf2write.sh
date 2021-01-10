@@ -1,6 +1,9 @@
 #!/bin/bash
 # Create a Write document from a PDF by generating page images
 
+# Constants
+IMAGE_DPI=300
+
 verifyPdf() {
   if [ -z "$1" ] # verify argument isn't empty
   then
@@ -23,7 +26,29 @@ verifyPdf() {
 }
 
 pdf2images() {
-  (command -v pdftoppm >/dev/null 2>&1 && pdftoppm -png -r 300 "$1" out) || convert -density 300 -scene 1 "$1" out-%03d.png
+  if [[ "$SCALE_TO" == "NONE" ]]
+  then
+    (command -v pdftoppm >/dev/null 2>&1 && pdftoppm -png -r $IMAGE_DPI "$1" out) || convert -density $IMAGE_DPI -scene 1 "$1" out-%03d.png
+  else
+    # Widths (in pixels) for each size standard.
+    # Can't use associative arrays as MacOS still has bash 3
+    local letter_portrait=$((85 * $IMAGE_DPI / 10))
+    local letter_landscape=$((11 * $IMAGE_DPI))
+    local a4_portrait=$((83 * $IMAGE_DPI / 10))
+    local a4_landscape=$((117 * $IMAGE_DPI / 10))
+
+    local pdfWidth pdfHeight size_std
+    read pdfWidth pdfHeight < <(pdfinfo "$1" | awk '/Page size:/{print $3, $5}')
+    size_std=${SCALE_TO}_$([[ $pdfWidth -ge $pdfHeight ]] && echo landscape || echo portrait)
+
+    if [ -z ${!size_std} ]
+    then
+      echo "Scale option '$SCALE_TO' is invalid."
+      exit 1
+    fi
+    command -v pdftoppm >/dev/null 2>&1 && pdftoppm -png -scale-to-x ${!size_std} -scale-to-y -1 "$1" out
+  fi
+
   if [ ! -f "out-1.png" ] && [ ! -f "out-01.png" ] && [ ! -f "out-001.png" ]; then
     echo "No page images found: make sure pdftoppm (from poppler-utils) or imagemagick and ghostscript are installed"
     exit 1
@@ -37,12 +62,11 @@ images2write() {
   local pngpage
   for pngpage in out-*.png
   do
-    local width2
-    local height2
+    local width2 height2
     read width2 height2 < <(file $pngpage | cut -d "," -f 2 | cut -d " " -f 2,4)
-    # page images generated at 300 DPI but Write uses 150 DPI as reference
-    local width=$((width2/2))
-    local height=$((height2/2))
+    # normalize page images generated at IMAGE_DPI to Write's reference 150 DPI
+    local width=$((width2/(IMAGE_DPI/150)))
+    local height=$((height2/(IMAGE_DPI/150)))
 
     printf '<svg class="write-page" color-interpolation="linearRGB" x="10" y="10" width="%dpx" height="%dpx" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n' $width $height >> "$1"
     printf '  <g class="write-content write-v3" xruling="0" yruling="40" marginLeft="100" papercolor="#FFFFFF" rulecolor="#9F0000FF">\n' >> "$1"
@@ -69,6 +93,7 @@ images2write() {
 
 FOREGROUND=false
 COMPRESS=true
+SCALE_TO='NONE'
 PDFSIN=()
 # https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash
 while [[ $# -gt 0 ]]
@@ -82,6 +107,11 @@ do
       ;;
     --nozip)
       COMPRESS=false
+      shift # past argument
+      ;;
+    -s|--scale-to)
+      shift # past argument
+      SCALE_TO=$1
       shift # past argument
       ;;
     #-d|--dpi)
@@ -109,6 +139,9 @@ then
   echo "Usage: pdf2write.sh [options] [PDF-files]"
   echo "  -f,--fg,--foreground: place page images in editable layer instead of ruling layer"
   echo "  --nozip: generate uncompressed svg instead of svgz"
+  echo "  -s,--scale-to [scale option]: scale the converted document to match the width of"
+  echo "      the provided [scale option] (a4, letter), with page orientation (landscape vs"
+  echo "      portrait) being detected automatically. Requires poppler-utils."
   exit 1
 fi
 
