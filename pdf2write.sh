@@ -52,38 +52,38 @@ PDFSIN=()
 # https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash
 while [[ $# -gt 0 ]]
 do
-key="$1"
+  key="$1"
 
-case $key in
-  -f|--fg|--foreground)
-  FOREGROUND=true
-  shift # past argument
-  ;;
-  --nozip)
-  COMPRESS=false
-  shift # past argument
-  ;;
-  #-d|--dpi)
-  #DPI="$2"
-  #shift # past argument
-  #shift # past value
-  #;;
-  *)    # unknown option
-  shift # past argument
-  if [ -z "$key" ] # verify argument isn't empty
-  then
-    continue
-  fi
+  case $key in
+    -f|--fg|--foreground)
+      FOREGROUND=true
+      shift # past argument
+      ;;
+    --nozip)
+      COMPRESS=false
+      shift # past argument
+      ;;
+    #-d|--dpi)
+      #DPI="$2"
+      #shift # past argument
+      #shift # past value
+      #;;
+    *)    # unknown option
+      shift # past argument
+      if [ -z "$key" ] # verify argument isn't empty
+      then
+        continue
+      fi
 
-  if ! [[ $key =~ \.pdf$ ]]; # verify argument is a pdf
-  then
-    echo "Ignoring $key as it is not a PDF file"
-    continue
-  fi
+      if ! [[ $key =~ \.pdf$ ]]; # verify argument is a pdf
+      then
+        echo "Ignoring $key as it is not a PDF file"
+        continue
+      fi
 
-  PDFSIN+="$key"
-  ;;
-esac
+      PDFSIN+="$key"
+      ;;
+  esac
 done
 
 if [ ${#PDFSIN[@]} -eq 0 ]
