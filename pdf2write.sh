@@ -89,6 +89,10 @@ do
       #shift # past argument
       #shift # past value
       #;;
+    -*|--*)
+      echo "Invalid option '$key', ignoring"
+      shift # past argument
+      ;;
     *)    # unknown option
       shift # past argument
       if verifyPdf "$key"
