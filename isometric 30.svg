@@ -1,0 +1,30 @@
+<svg id="write-document" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect id="write-doc-background" width="100%" height="100%" fill="#808080"/>
+<defs id="write-defs">
+<image id='thumbnail' xlink:href='data:image/png;base64,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'/>
+
+<script type="text/writeconfig">
+  <int name="docFormatVersion" value="2" />
+  <int name="pageNum" value="0" />
+  <float name="xOffset" value="-10" />
+  <float name="yOffset" value="-10" />
+</script>
+</defs>
+<svg class="write-page" color-interpolation="linearRGB" x="10" y="10" width="800px" height="1050px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g class="write-content write-v3" width="800" height="1050" xruling="26" yruling="15" marginLeft="52" papercolor="#FFFFFF" rulecolor="#FF7F7FFF">
+    <g class="ruleline write-scale-down" color="#7F7FFF" shape-rendering="crispEdges" vector-effect="non-scaling-stroke">
+      <pattern id="ruling1" x="0" y="0" width="52" height="30" patternUnits="userSpaceOnUse">
+		  <path fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1" d="M52 0 l-52 30 0 -30 52 30 M26 0 l0 30" />
+      </pattern>
+      <rect class="pagerect" fill="#FFFFFF" x="0" y="0" width="800" height="1050" />
+      <rect fill="url(#ruling1)" x="0" y="0" width="2048" height="4096" />
+      <path class="leftmargin" stroke="none" d="M52 0 l0 4096" />
+    </g>
+  </g>
+</svg>
+<defs>
+<style type="text/css"><![CDATA[
+  #write-document, #write-doc-background { width: 820px;  height: 1070px; }
+]]></style>
+</defs>
+</svg>
