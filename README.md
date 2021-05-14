@@ -6,6 +6,14 @@ Download the template to your desired folder, then in Write long press on the te
 
 To add a page with a different template to a document, use Document -> Insert Document... and choose the desired template.
 
+
+### PDF import ###
+
+On Linux or Mac, `pdf2write.sh` can convert PDF to SVG for use in Write.  First try with the `--vector` argument (requires poppler-utils to be installed).  When opening in Write, choose "Use as background" unless you want to modify the original content.  If the results are not satisfactory, try again without `--vector` to render pages to images instead (requires imagemagick and ghostscript or pdftoppm from poppler-utils).  Another option using inkscape is [kosmospredanie/pdftowrite](https://github.com/kosmospredanie/pdftowrite).
+
+For LaTeX documents, [dvisvgm](https://dvisvgm.de) produces good results converting directly from DVI: `dvisvgm -p1- -bpapersize --stdout in.dvi > out.svg`
+
+
 ### Editing templates ###
 
 Simple templates can be editing by manually editing the SVG file (as text).  It should be possible to edit templates in, e.g., Inkscape, but this isn't tested yet.  Send a pull request if you'd like to share your template.
@@ -35,14 +43,10 @@ Example w/ explanation:
 </svg>
 ```
 
-The page background ("ruling") is determined by the content in `g.ruleline`.  `currentColor` inserts the color specified in the nearest `color` attribute (standard SVG behavior) - the `color` attribute on `g.ruleline` is set from the "Ruling Color" choosen in the Page Setup dialog.  Fixed colors are specified directly, e.g., `stroke="red"` or `stroke="#FF0000"`. `shape-rendering="crispEdges"` gives thin lines a sharp appearance and `vector-effect="non-scaling-stroke"` prevents them from changing size when zooming in or out, while the class `write-scale-down` causes Write to lighten them when zooming out so they don't dominate the appearance when zoomed far out.  Using a `<pattern>` enables changing page size for simple repeated rulings, up to the size of the `<rect>` filled with the pattern.
+The page background ("ruling") is determined by the content in `g.ruleline`.  `currentColor` inserts the color specified in the nearest `color` attribute (standard SVG behavior) - the `color` attribute on `g.ruleline` is set from the "Ruling Color" chosen in the Page Setup dialog.  Fixed colors are specified directly, e.g., `stroke="red"` or `stroke="#FF0000"`. `shape-rendering="crispEdges"` gives thin lines a sharp appearance and `vector-effect="non-scaling-stroke"` prevents them from changing size when zooming in or out, while the class `write-scale-down` causes Write to lighten them when zooming out so they don't dominate the appearance when zoomed far out.  Using a `<pattern>` enables changing page size for simple repeated rulings, up to the size of the `<rect>` filled with the pattern.
 
 On `g.write-content`, the `width`, `height`, `xruling`, `yruling`, `marginLeft`, `papercolor`, and `rulecolor` attributes correspond to the values set in the Page Setup dialog.  Page width, height, and color (as `fill`) must also be set on `rect.pagerect` in `g.ruleline`.  Page width and height are also set on `svg.write-page`.
 
 Any content inside `g.write-content` after `g.ruleline` will be editable in Write.
 
 Multi-page templates can be created by adding additional pages (svg.write-page) to the template document.  When editing the document in Write, the background of the last page will be duplicated when adding to new pages to the end.  To prevent this, the class `write-no-dup` can be added to `g.ruleline`
-
-### PDF import ###
-
-On Linux or Mac, run `pdf2write.sh` can be used to generate a Write document with page images from the specified PDF as the page backgrounds.  The script requires imagemagick and ghostscript or pdftoppm (from poppler-utils - a smaller install).

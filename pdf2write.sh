@@ -3,6 +3,7 @@
 
 FOREGROUND=false
 COMPRESS=true
+VECTOR=false
 PDFIN=''
 # https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash
 while [[ $# -gt 0 ]]
@@ -16,6 +17,10 @@ case $key in
   ;;
   --nozip)
   COMPRESS=false
+  shift # past argument
+  ;;
+  --vector)
+  VECTOR=true
   shift # past argument
   ;;
   #-d|--dpi)
@@ -36,16 +41,30 @@ then
   echo "Usage: pdf2write.sh [options] [PDF-file]"
   echo "  -f,--fg,--foreground: place page images in editable layer instead of ruling layer"
   echo "  --nozip: generate uncompressed svg instead of svgz"
+  echo "  --vector: convert to vectors instead of images (-f does not apply)"
   exit 1
 fi
+
+SVGOUT=$(basename "$PDFIN" pdf)svg
+
+# if not passed -f, -l args, pdftocairo will generate a single svg file using <pageSet> and <page>, which is
+#  not supported by Write (yet), and will never be supported by browsers
+if [ "$VECTOR" = true ]
+then
+  pdftocairo -svg -f 1 -l 1 "$PDFIN" - > "$SVGOUT"
+  for i in {2..1000}; do pdftocairo -svg -f "${i}" -l "${i}" "$PDFIN" - || break ; done >> "$SVGOUT" 2>/dev/null
+  [ "$COMPRESS" = true ] && gzip -S z "$SVGOUT"
+  echo "Finished creating $SVGOUT"z
+  exit 0
+fi
+# another option, but poor results w/ non-LaTeX pdfs: dvisvgm --pdf -p1- --stdout in.pdf > out.svg
 
 echo "Converting $PDFIN to images..."
 (command -v pdftoppm >/dev/null 2>&1 && pdftoppm -png -r 300 "$PDFIN" out) || convert -density 300 -scene 1 "$PDFIN" out-%03d.png
 if [ ! -f "out-1.png" ] && [ ! -f "out-01.png" ] && [ ! -f "out-001.png" ]; then
   echo "No page images found: make sure pdftoppm (from poppler-utils) or imagemagick and ghostscript are installed"
-  exit 1
+  exit 2
 fi
-SVGOUT=$(basename "$PDFIN" pdf)svg
 echo "Generating Write document..."
 
 printf '<svg id="write-document" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n' > "$SVGOUT"
