@@ -1,0 +1,30 @@
+<svg id="write-document" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect id="write-doc-background" width="100%" height="100%" fill="#808080"/>
+<defs id="write-defs">
+<image id='thumbnail' xlink:href='data:image/png;base64,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'/>
+
+<script type="text/writeconfig">
+  <int name="docFormatVersion" value="2" />
+  <int name="pageNum" value="0" />
+  <float name="xOffset" value="-10" />
+  <float name="yOffset" value="-10" />
+</script>
+</defs>
+<svg class="write-page" color-interpolation="linearRGB" x="10" y="10" width="800px" height="1050px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g class="write-content write-v3" width="800" height="1050" xruling="26" yruling="15" marginLeft="52" papercolor="#FFFFFF" rulecolor="#7F7F7FFF">
+    <g class="ruleline write-scale-down" color="rgba(127,127,255,0.5)" vector-effect="non-scaling-stroke">
+      <pattern id="ruling1" x="0" y="0" width="52" height="90" patternUnits="userSpaceOnUse">
+        <path fill="none" stroke="currentColor" stroke-width="1" d="M52 15 l-26 -15 -26 15 0 30 26 15 26 -15 m-26 15 l0 30" />
+      </pattern>
+      <rect class="pagerect" fill="#FFFFFF" x="0" y="0" width="800" height="1050" />
+      <rect fill="url(#ruling1)" x="0" y="0" width="2048" height="4096" />
+      <path class="leftmargin" stroke="none" d="M52 0 l0 4096" />
+    </g>
+  </g>
+</svg>
+<defs>
+<style type="text/css"><![CDATA[
+  #write-document, #write-doc-background { width: 820px;  height: 1070px; }
+]]></style>
+</defs>
+</svg>
